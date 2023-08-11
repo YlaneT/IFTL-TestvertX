@@ -15,6 +15,12 @@ local.properties
 .loadpath
 .recommenders
 
+### IntelliJ
+.idea/
+
+### maven ###
+/.mvn/
+
 # External tool builders
 .externalToolBuilders/
 

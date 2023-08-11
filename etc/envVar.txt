@@ -1,1 +1,0 @@
--Darcsys.ws.config=@INSTALL_PATH@/etc/ARCSYS_RMI_API.properties -Dlog4j.configurationFile=@INSTALL_PATH@/etc/log4j2.xml -Darcsys.ws.bdd=@INSTALL_PATH@/etc/REFERENTIAL_JDBC.properties -Djava.security.policy=@INSTALL_PATH@/etc/policy
