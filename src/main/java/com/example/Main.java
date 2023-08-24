@@ -2,30 +2,22 @@ package com.example;
 
 import io.vertx.core.Vertx;
 
-import java.util.Observer;
-
 public class Main {
     
-    private static Vertx              vertx;
-//    public static  ObservableShutdown observableShutdown = new ObservableShutdown();
-//    public static  ObserverShutdown   observerShutdown   = new ObserverShutdown();
+    private static Vertx vertx;
     
-    public static void main (String[] args) throws InterruptedException {
+    public static void main (String[] args) {
         vertx = Vertx.vertx();
         vertx.deployVerticle(new Server());
-        vertx.deployVerticle(new Server());
-        vertx.deployVerticle(new Server());
-        vertx.deployVerticle(new Server());
-        vertx.deployVerticle(new Server());
-        vertx.deployVerticle(new Server());
-        vertx.deployVerticle(new Server());
-        vertx.deployVerticle(new Server());
         
-        Thread.sleep(500);
-        
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        // Le déploiement des verticle est un processus asynchrone.
+        // Si l'on veut voir les id, il faut laisser du temps à la machine.
         System.out.println(vertx.deploymentIDs());
-        
-//        observerShutdown.observe(observableShutdown);
     }
     
     public static void closeVertx () {
