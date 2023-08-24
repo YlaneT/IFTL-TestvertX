@@ -18,7 +18,8 @@ public class Server extends AbstractVerticle {
                .end("Hello from Vert.X !");
         });
         router.get("/shutdown").handler(req -> {
-            Main.observableShutdown.setShutdownCalled(true);
+//            Main.observableShutdown.setShutdownCalled(true);
+            Main.closeVertx();
             req.response().putHeader("content-type", "text/plain").end("Server closed");
         });
         

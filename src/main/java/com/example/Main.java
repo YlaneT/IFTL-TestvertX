@@ -7,8 +7,8 @@ import java.util.Observer;
 public class Main {
     
     private static Vertx              vertx;
-    public static  ObservableShutdown observableShutdown = new ObservableShutdown();
-    public static  ObserverShutdown   observerShutdown   = new ObserverShutdown();
+//    public static  ObservableShutdown observableShutdown = new ObservableShutdown();
+//    public static  ObserverShutdown   observerShutdown   = new ObserverShutdown();
     
     public static void main (String[] args) throws InterruptedException {
         vertx = Vertx.vertx();
@@ -25,7 +25,7 @@ public class Main {
         
         System.out.println(vertx.deploymentIDs());
         
-        observerShutdown.observe(observableShutdown);
+//        observerShutdown.observe(observableShutdown);
     }
     
     public static void closeVertx () {
